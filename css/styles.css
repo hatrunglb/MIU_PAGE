@@ -1,5 +1,16 @@
-.h {
-    background: aqua;
-    font-size: 1.5px;
-    color: #cdcdcd;
+:root {
+    --blue: #1e90ff;
+    --white: #ffffff;
+    --primary: #ffd633;
+    --secondary: #39ac73;
 }
+
+.h {
+    /*background: aqua;*/
+    font-size: 1rem;
+    color: var(--white);
+}
+.bg-my-primary {
+    background-color: var(--primary);
+}
+
