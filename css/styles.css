@@ -17,6 +17,7 @@ body {
     background-color: var(--background);
     color: var(--text);
 }
+
 .bg-my-primary {
     background-color: var(--primary);
 }
@@ -29,8 +30,10 @@ body {
     border: 1px solid var(--text);
     border-radius: 8px
 }
+
 .link {
     color: var(--text);
+    font-size: 24px;
 }
 
 .border-text-color {
@@ -51,6 +54,22 @@ body {
     to {
         transform: scale(2);
     }
+}
+
+.page-title {
+    font-family: fantasy;
+    font-size: 40px;
+    line-height: 40px;
+}
+
+.page-subtitle {
+    font-family: cursive;
+    font-size: 24px;
+}
+
+.map {
+    margin-top: 20px;
+    height: 400px;
 }
 
 /* head-1 */
@@ -81,3 +100,38 @@ body {
 }
 
 /* head-1 */
+.anh-moi {
+    position: relative;
+    display: inline-block;
+}
+
+.anh-moi .content {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    transform: translateY(-50%);
+    color: white;
+    background-color: rgba(241, 241, 241, 0.38);
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    font-style: italic;
+    font-family: "Lucida Grande";
+}
+
+/* time */
+.tb-time {
+    width: 120px;
+    font-weight: 500;
+}
+.tb-cont {
+    font-weight: 500;
+    border-left: 1px solid #DEE2E6;
+}
+
+.tb-cont .link {
+    font-size: 16px;
+}
+/* time */
