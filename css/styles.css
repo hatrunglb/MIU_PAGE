@@ -3,6 +3,8 @@
     --white: #ffffff;
     --primary: #ffd633;
     --secondary: #39ac73;
+    --background: #FEFCF7;
+    --text: #392200;
 }
 
 .h {
@@ -10,7 +12,72 @@
     font-size: 1rem;
     color: var(--white);
 }
+
+body {
+    background-color: var(--background);
+    color: var(--text);
+}
 .bg-my-primary {
     background-color: var(--primary);
 }
 
+.my-btn {
+    box-shadow: none;
+    padding: 8px;
+    color: var(--white);
+    background-color: var(--text);
+    border: 1px solid var(--text);
+    border-radius: 8px
+}
+.link {
+    color: var(--text);
+}
+
+.border-text-color {
+    border-color: var(--text) !important;
+}
+
+.heart i {
+    font-size: 30px;
+    color: #f34242;
+    animation: heart_ani 1s ease infinite alternate;
+}
+
+@keyframes heart_ani {
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(2);
+    }
+}
+
+/* head-1 */
+.head-1 {
+}
+
+.head-1 .co-1 .avatar {
+    width: 150px;
+}
+
+.head-1 .co-1 .content {
+    flex: 1;
+}
+
+.head-1 .co-1 .content .title {
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.head-1 .co-1 .content .description {
+    font-size: 16px;
+    font-style: italic;
+}
+
+.head-1 .co-1 .spa {
+    height: 12px;
+    width: auto;
+}
+
+/* head-1 */
