@@ -24,6 +24,11 @@ body {
     color: var(--text);
 }
 
+#main {
+    position: relative;
+    overflow-x: hidden;
+}
+
 canvas {
     margin-top: 24px;
     /*position: fixed;*/
@@ -42,14 +47,64 @@ canvas {
     background-color: var(--black);
 }
 
-.my-btn {
-    padding: 16px 8px;
-    color: var(--lighText);
-    text-shadow: 0 0 10px var(--textShadow);
+.bg-dark {
     background-color: var(--dark);
-    border: 1px solid var(--dark);
-    border-radius: 18px;
-    box-shadow: 0 0 20px var(--textShadow);
+}
+
+.my-btn {
+    position: relative;
+    padding: 16px 8px;
+    color: var(--white);
+    font-weight: 800;
+    font-size: 20px;
+    font-family: fantasy;
+    /*text-shadow: 0 0 10px var(--textShadow);*/
+    background-color: var(--text);
+    /*border: 1px solid var(--lighText);*/
+    border: none;
+    border-radius: 20px;
+    /*box-shadow: 0 0 40px var(--red);*/
+    transition: background 0.5s;
+    z-index: 1;
+}
+
+.my-btn1:first-child {
+    background: linear-gradient(90deg, #fe6c98, #f9cf5b, #f43b03, #fe6c98);
+    background-size: 400%;
+}
+
+.my-btn1:last-child {
+    background: linear-gradient(90deg, #fe6c98, #f9cf5b, #f43b03, #fe6c98);
+    background-size: 400%;
+}
+
+.my-btn1:first-child:before,
+.my-btn1:last-child:before {
+    content: "";
+    position: absolute;
+    background: inherit;
+    top: -5px;
+    right: -5px;
+    bottom: -5px;
+    left: -5px;
+    border-radius: 50px;
+    filter: blur(20px);
+    opacity: 1;
+    transition: opacity 0.5s;
+    z-index: -1;
+}
+
+.my-btn1 {
+    animation: btnAnimation 7s linear infinite;
+}
+
+@keyframes btnAnimation {
+    0% {
+        background-position: 0;
+    }
+    100% {
+        background-position: 100%;
+    }
 }
 
 .link {
@@ -65,6 +120,11 @@ canvas {
     font-size: 30px;
     color: #f34242;
     animation: heart_ani 1s ease infinite alternate;
+}
+
+.heart .heart-i {
+    font-size: 24px;
+    color: #fcb0b0;
 }
 
 @keyframes heart_ani {
@@ -221,27 +281,60 @@ canvas {
 }
 
 .anh-moi img {
-    /*-webkit-box-reflect: below 0px linear-gradient(transparent, #FFFFFF50);*/
+    -webkit-box-reflect: below 0px linear-gradient(transparent, #FFFFFF50);
 }
 
 /* time */
+#time-event {
+    margin-top: 140px;
+    animation: test 5s linear;
+    animation-timeline: view();
+    animation-range: entry 0% cover 40%;
+}
+
 .box-time {
+    margin-top: 20px;
     width: 100%;
-    box-shadow: inset 0 0 20px var(--boxShadow);
-    padding-bottom: 24px;
+    /*padding: 10px;*/
+    border: 10px solid var(--dark);
+    box-shadow: inset 0 0 10px var(--boxShadow);
+    animation: test 5s linear;
+    animation-timeline: view();
+    animation-range: entry 0% cover 40%;
 }
 
 .box-time-sub {
-    margin: 0 24px;
+    margin: 0 12px;
+}
+
+@keyframes test {
+    from {
+        opacity: 0;
+        scale: 0.4;
+        transform: rotateX('80deg');
+    }
+    to {
+        opacity: 1;
+        scale: 1;
+        transform: rotateX(0);
+    }
 }
 
 .box-time .page-subtitle {
-    color: #d1c3ae;
-    text-shadow: 0 5px 10px #d0ab63
+    color: var(--text);
+    padding: 4px;
+    margin-bottom: 8px;
 }
+
+.box-time .page-subtitle p {
+    padding: 0;
+    margin: 0;
+}
+
 .box-time .border-text-color {
-    box-shadow: 0 0 20px var(--boxShadow);
+    /*box-shadow: 0 0 20px var(--red);*/
 }
+
 .tb-time {
     width: 120px;
     font-weight: 500;
@@ -257,3 +350,174 @@ canvas {
 }
 
 /* time */
+
+/*scroll*/
+.scroll_setup {
+}
+
+/*scroll*/
+
+/* story*/
+.story-l, .story-r {
+    display: flex;
+    padding: 20px 16px;
+    gap: 10px;
+    border-bottom-right-radius: 12px;
+    border-top-right-radius: 12px;
+    /*max-width: 400px;*/
+    z-index: 1;
+}
+
+.story-l {
+    animation: story-1 5s linear;
+    animation-timeline: view();
+    animation-range: entry 0% cover 40%;
+}
+
+.story-r {
+    flex-direction: row-reverse;
+    animation: story-2 5s linear;
+    animation-timeline: view();
+    animation-range: entry 0% cover 40%;
+    position: relative;
+}
+
+/*.story-r::before {*/
+/*    content: '';*/
+/*    background: none;*/
+/*    position: absolute;*/
+/*    !*opacity: 0;*!*/
+/*    top: 0;*/
+/*    right: 0;*/
+/*    width: 100%;*/
+/*    height: 100%;*/
+/*    flex-direction: row-reverse;*/
+/*    animation: story-2 5s linear;*/
+/*    animation-timeline: view();*/
+/*    animation-range: entry 0% cover 40%;*/
+/*    z-index: 3;*/
+/*}*/
+
+@keyframes story-1 {
+    0% {
+        opacity: 0;
+        transform: translateX(-60%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes story-2 {
+    /*0% {*/
+    /*    opacity: 0;*/
+    /*    transform: translateX(-100%);*/
+    /*}*/
+    /*85% {*/
+    /*    opacity: 0.5;*/
+    /*}*/
+    /*100% {*/
+    /*    opacity: 1;*/
+    /*    transform: translateX(0);*/
+    /*}*/
+    0% {
+        opacity: 0;
+        transform: translateX(60%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.story-l .left, .story-r .left {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+.story-r .image, .story-l .image {
+    height: 80px;
+    width: 80px;
+    background-color: var(--lighText);
+    position: relative;
+    align-content: center;
+}
+
+.story-r .image .box, .story-l .image .box {
+    height: 40px;
+    width: 40px;
+    align-content: center;
+    margin: auto;
+    background-color: var(--white);
+}
+
+.story-l .date, .story-r .date {
+    height: 70px;
+    margin-top: 10px;
+    line-height: 28px;
+    font-size: 28px;
+    font-weight: 900;
+}
+.story-l .date {
+    text-align: left;
+}
+
+.story-r .date {
+    text-align: right;
+}
+
+#story .image-sub {
+    height: 80px;
+    width: 40px;
+    background-color: red;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: rotateX(130deg);
+}
+
+.space {
+    height: 20px
+}
+
+/* story*/
+
+/*thank*/
+.thank {
+    margin: 60px 0;
+    font-family: "Lucida Grande";
+}
+/*thank*/
+
+/* rain */
+.rain {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50px;
+    height: 50px;
+    cursor: none;
+    background-image: url("../images/heart.png");
+    background-size: cover;
+    animation: animationRain 4s ease-in-out infinite;
+    z-index: 10;
+}
+
+@keyframes animationRain {
+    0% {
+        transform: translate(0,0);
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        transform: translate(100px,50vh);
+        opacity: 0;
+    }
+}
+/* rain */

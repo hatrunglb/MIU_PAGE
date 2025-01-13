@@ -6,9 +6,12 @@ let particles = [];
 
 function setup() {
     canvas = document.getElementById('canvas');
+    if (!canvas) {
+        return;
+    }
     setSize(canvas);
     ctx = canvas.getContext('2d');
-    ctx.fillStyle = 'rgba(0,0,0,0)';
+    ctx.fillStyle = '#FEFCF7';
     ctx.fillRect(0, 0, width, height);
     fireworks.push(new Firework(Math.random()*(width - 200) + 100));
     window.addEventListener('resize', windowResized);
@@ -18,8 +21,12 @@ function setup() {
 setTimeout(setup, 1);
 
 function loop() {
+    if (!ctx) {
+        clearInterval(refreshIntervalId);
+        return
+    }
     ctx.globalAlpha = 0.1;
-    ctx.fillStyle = '#000000';
+    ctx.fillStyle = '#FEFCF7';
     ctx.fillRect(0, 0, width, height);
     ctx.globalAlpha = 1;
 
@@ -38,7 +45,8 @@ function loop() {
     if (Math.random() < 1/60) fireworks.push(new Firework(Math.random()*(width - 200) + 100));
 }
 
-setInterval(loop, 1/60);
+var refreshIntervalId = setInterval(loop, 1/60);
+refreshIntervalId
 
 //setInterval(loop, 100/60);
 class Particle {
@@ -127,7 +135,7 @@ function randomVec(max) {
 function setSize(canv) {
     const parent = document.getElementById('parent');
     canv.style.width = parent.offsetWidth - 48 + 'px';
-    canv.style.height = parent.offsetHeight - 24 + 'px';
+    canv.style.height = '300px';
     width = innerWidth;
     height = innerHeight;
 
@@ -142,6 +150,6 @@ function onClick(e) {
 
 function windowResized() {
     setSize(canvas);
-    ctx.fillStyle = '#000000';
+    ctx.fillStyle = '#FEFCF7';
     ctx.fillRect(0, 0, width, height);
 }
