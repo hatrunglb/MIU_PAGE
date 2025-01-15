@@ -1,7 +1,7 @@
 let main = document.getElementById('main');
 let count = 50;
 for (let i = 0; i < count; i++) {
-    let leftRain = Math.floor(Math.random()*main.clientWidth);
+    let leftRain = Math.floor(Math.random()*(main.clientWidth - 50));
     let topRain = Math.floor(Math.random()*main.clientHeight);
     let widthRain = Math.floor(Math.random()*50);
     let timeRain = Math.floor((Math.random()*5) + 5);
