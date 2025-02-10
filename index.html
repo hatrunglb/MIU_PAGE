@@ -21,7 +21,9 @@
     <!--    <script src="js/firework2.js"></script>-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Meow+Script&family=Nunito:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Meow+Script&family=Nunito:wght@200;300;400;500;600;700;800&display=swap"
+          rel="stylesheet"
+    >
 </head>
 <body style="min-width: 300px" id="main">
 <div class="container-fluid text-center">
@@ -56,8 +58,8 @@
         <div class="row head-1">
             <div class="col-12 col-sm-5 p-2 co-1">
                 <div class="d-sm-flex flex-row-reverse">
-                    <div class="avatar mx-auto">
-                        <img src="./images/boy.jpeg" class="img img-fluid rounded-circle" alt="">
+                    <div class="avatar mx-auto" id="ava-cr">
+                        <img src="./images/avaCR.png" class="img img-fluid rounded-circle" alt="">
                     </div>
                     <div class="spa d-sm-none"></div>
                     <div class="content pe-3">
@@ -89,8 +91,8 @@
             </div>
             <div class="col-12 col-sm-5 p-2 co-1">
                 <div class="d-sm-flex flex-row">
-                    <div class="avatar mx-auto">
-                        <img src="./images/girl.jpeg" class="img img-fluid rounded-circle" alt="">
+                    <div class="avatar mx-auto" id="ava-cd">
+                        <img src="./images/avaCD.png" class="img img-fluid rounded-circle" alt="">
                     </div>
                     <div class="spa d-sm-none"></div>
                     <div class="content ps-3">
@@ -169,7 +171,7 @@
                         <tbody>
                         <tr>
                             <td class="tb-time">
-                                7h00,
+                                07h00,
                                 <p>15-02-2025</p>
                             </td>
                             <td class="tb-cont">
@@ -207,7 +209,7 @@
                         </tr>
                         <tr>
                             <td class="tb-time">
-                                13h15, <p>16-02-2025</p>
+                                07h15, <p>16-02-2025</p>
                             </td>
                             <td class="tb-cont">
                                 Xuất phát đi đón dâu
@@ -215,10 +217,10 @@
                         </tr>
                         <tr>
                             <td class="tb-time">
-                                14h15, <p>16-02-2025</p>
+                                09h15, <p>16-02-2025</p>
                             </td>
                             <td class="tb-cont">
-                                Đón cô dâu từ nhà gái về
+                                Lễ thành hôn
                             </td>
                         </tr>
                         </tbody>
@@ -256,7 +258,7 @@
                         <tbody>
                         <tr>
                             <td class="tb-time">
-                                7h00, 15-02-2025
+                                07h00, <p>15-02-2025</p>
                             </td>
                             <td class="tb-cont">
                                 Gia đình tổ chức lễ ăn hỏi
@@ -277,7 +279,7 @@
                                            style="margin-right: 4px;"
                                         ></i>
                                         Địa
-                                        điểm : Nhà văn hoá thôn Dương Đá
+                                        điểm : Trường THPT Dương Xá
                                     </a>
                                 </p>
                             </td>
@@ -292,7 +294,7 @@
                         </tr>
                         <tr>
                             <td class="tb-time">
-                                13h15, 16-02-2025
+                                08h30, <p>16-02-2025</p>
                             </td>
                             <td class="tb-cont">
                                 Lễ Vu quy
@@ -300,10 +302,10 @@
                         </tr>
                         <tr>
                             <td class="tb-time">
-                                14h15, 16-02-2025
+                                09h15, <p>16-02-2025</p>
                             </td>
                             <td class="tb-cont">
-                                Đón cô dâu từ nhà gái về
+                                Lễ thành hôn
                             </td>
                         </tr>
                         </tbody>
@@ -586,6 +588,27 @@
     <!--  story-->
 
     <!--  ảnh cưới-->
+    <!--    <div id="carouselExampleControls" class="carousel slide carousel-fade" data-ride="carousel">-->
+    <!--        <div class="carousel-inner">-->
+    <!--            <div class="carousel-item active">-->
+    <!--                <img src="./images/cuoi2.jpg" class="d-block w-100" alt="...">-->
+    <!--            </div>-->
+    <!--            <div class="carousel-item">-->
+    <!--                <img src="./images/cuoi3.jpg" class="d-block w-100" alt="...">-->
+    <!--            </div>-->
+    <!--            <div class="carousel-item">-->
+    <!--                <img src="./images/cuoi4.jpg" class="d-block w-100" alt="...">-->
+    <!--            </div>-->
+    <!--        </div>-->
+    <!--        <button class="carousel-control-prev" type="button" data-target="#carouselExampleControls" data-slide="prev">-->
+    <!--            <span class="carousel-control-prev-icon" aria-hidden="true"></span>-->
+    <!--            <span class="sr-only">Previous</span>-->
+    <!--        </button>-->
+    <!--        <button class="carousel-control-next" type="button" data-target="#carouselExampleControls" data-slide="next">-->
+    <!--            <span class="carousel-control-next-icon" aria-hidden="true"></span>-->
+    <!--            <span class="sr-only">Next</span>-->
+    <!--        </button>-->
+    <!--    </div>-->
     <div id="carouselExampleControls" class="carousel slide mb-5" data-bs-ride="carousel">
         <div id="carouselExampleControlsInner" class="carousel-inner">
             <!--            <div class="carousel-item active" style="height: 200px">-->
@@ -600,16 +623,20 @@
                 data-bs-target="#carouselExampleControls"
                 data-bs-slide="prev"
         >
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
+            <span class="btn-car">
+                <span class="carousel-control-prev-icon d-block" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </span>
         </button>
         <button class="carousel-control-next"
                 type="button"
                 data-bs-target="#carouselExampleControls"
                 data-bs-slide="next"
         >
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
+            <span class="btn-car">
+                <span class="carousel-control-next-icon d-block" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </span>
         </button>
     </div>
     <!--  ảnh cưới-->
@@ -644,13 +671,13 @@
         <a id="address_bride"
            class="link"
            target="_blank"
-           href="https://maps.app.goo.gl/BeZtBG4wSCcRRUvVA"
+           href="https://maps.app.goo.gl/bJnwfULN6zPFnmDHA"
         >
             <i class="fa fa-map-marker" aria-hidden="true" style="margin-right: 4px;"></i> Địa điểm tổ chức tiệc nhà
-            gái: Nhà văn hoá thôn Dương Đá
+            gái: Trường THPT Dương Xá
         </a>
     </div>
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1122.7414426988132!2d105.9700019285206!3d21.005113198784866!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135a7287ee1b557%3A0xd3855a18995ad97c!2zTmjDoCB2xINuIGhvw6EgdGjDtG4gRMawxqFuZyDEkcOh!5e1!3m2!1svi!2s!4v1735206274333!5m2!1svi!2s"
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4345.372049627709!2d105.96693810000001!3d21.0084806!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135a8a7d22c9529%3A0x2c8f2cc03576427a!2zVHLGsOG7nW5nIFRIUFQgRMawxqFuZyBYw6E!5e1!3m2!1svi!2s!4v1739179934572!5m2!1svi!2s"
             width="600"
             height="450"
             style="border:0;"
@@ -662,14 +689,17 @@
     <!--  địa chỉ-->
 </div>
 <script>
-    const arrImg = ['honho.jpg', 'homeo.png', 'hohun.jpg'];
+    const arrImg = [];
+    for (let i = 0; i < 10; i++) {
+        arrImg.push(`cuoi${i + 1}.jpg`);
+    }
     let imgHTMLItems = '';
 
     function getCarouselHTLM(index, img) {
         const item = document.createElement('div');
         const imgHTML = document.createElement('img');
-        item.className = `carousel-item py-4 ${index === 0 ? 'active' : ''}`;
-        item.style.height = '300px';
+        item.className = `carousel-item py-4 box-carousel ${index === 0 ? 'active' : ''}`;
+        // item.style.height = '400px';
 
         imgHTML.className = 'd-block h-100 mx-auto rounded';
         imgHTML.src = './images/' + img;
@@ -682,7 +712,6 @@
     const carouselHTML = document.getElementById('carouselExampleControlsInner');
     arrImg.forEach((image, index) => {
         carouselHTML.appendChild(getCarouselHTLM(index, image));
-
     });
     // var wrapper = document.getElementById('myHTMLWrapper');
     // var myHTML = '';
