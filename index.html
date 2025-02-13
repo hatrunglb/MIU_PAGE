@@ -30,6 +30,15 @@
     <source src="./images/musics_song.mp3" type="audio/mpeg">
 </audio>
 <div class="container-fluid text-center">
+    <div class="fixed-bottom" style="left: unset; right: 8px; bottom: 8px">
+        <button
+                onclick="unmuteAudio()"
+                class="border border-text-color bg-my-primary"
+                style="width: 40px; height: 40px; border-radius: 50%; background-color: #392200">
+            <i class="fa fa-pause d-none" style="color: white" id="btnPause"></i>
+            <i class="fa fa-play" style="color: white" id="btnPlay"></i>
+        </button>
+    </div>
     <!--    <div class="fixed-bottom">-->
     <!--        <a class="btn btn-primary " href="#topPage" role="button">Scroll to top</a>-->
     <!--    </div>-->
@@ -750,13 +759,22 @@
     setSpaceAnhMoi();
     window.addEventListener('resize', setSpaceAnhMoi);
 
-    var audio = document.getElementById("myAudio");
-
-    function playAudio() {
-        audio.play();
+    var btnPlay = document.getElementById("btnPlay");
+    var btnPause = document.getElementById("btnPause");
+    function unmuteAudio() {
+        var audio = document.getElementById("myAudio");
+        audio.muted = false;
+        if ( audio.paused ) {
+            audio.play();
+            btnPlay.classList.add('d-none');
+            btnPause.classList.remove('d-none');
+        } else {
+            audio.pause();
+            btnPause.classList.add('d-none');
+            btnPlay.classList.remove('d-none');
+        }
     }
 
-    playAudio();
 </script>
 <script type="text/javascript" src="./js/rain.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
